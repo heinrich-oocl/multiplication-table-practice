@@ -6,7 +6,7 @@ public class MultiplicationTable {
     }
 
     public Boolean isValid(int start, int end) {
-        return isInRange(start) && isStartNotBiggerThanEnd(start, end);
+        return isInRange(start) && isInRange(end) && isStartNotBiggerThanEnd(start, end);
     }
 
     public Boolean isInRange(int number) {
@@ -20,8 +20,7 @@ public class MultiplicationTable {
     public String generateTable(int start, int end) {
         StringBuilder line = new StringBuilder();
         for (int i=start; i<=end; i++){
-            line.append(generateLine(start, i));
-            line.append(System.lineSeparator());
+            line.append(generateLine(start, i)).append(System.lineSeparator());
         }
         return line.toString().trim();
     }

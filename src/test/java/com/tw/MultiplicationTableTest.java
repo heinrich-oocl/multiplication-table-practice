@@ -74,6 +74,34 @@ public class MultiplicationTableTest {
     }
 
     @Test
+    void should_return_false_when_validate_given_start_0_and_end_100() {
+        //given
+        MultiplicationTable multiplicationTable = new MultiplicationTable();
+        int start = 0;
+        int end = 100;
+
+        //when
+        Boolean actual = multiplicationTable.isValid(start, end);
+
+        //then
+        assertFalse(actual);
+    }
+
+    @Test
+    void should_return_false_when_validate_given_start_1_and_end_1001() {
+        //given
+        MultiplicationTable multiplicationTable = new MultiplicationTable();
+        int start = 1;
+        int end = 1001;
+
+        //when
+        Boolean actual = multiplicationTable.isValid(start, end);
+
+        //then
+        assertFalse(actual);
+    }
+
+    @Test
     void should_return_multiplication_expression_when_multiply_given_multiplicand_2_and_multiplier_3() {
         //given
         MultiplicationTable multiplicationTable = new MultiplicationTable();
